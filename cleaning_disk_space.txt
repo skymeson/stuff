@@ -1,0 +1,3 @@
+Cleaning up disk space on Holly, Simla or Lamar 
+Question: I received a message about being over my quota. What does this mean? 
+Answer: If you get this type of message or you are having trouble saving mail or files, then you may be over your disk space limit. This limit is referred to as your disk quota. You can gain some space by doing a little house cleaning on your account. Check out your account's quota by using the Quota Calculator for a quick look at your file space information. However, for a more detailed analysis of your file space and a way to reduce it, log in to Holly/Simla/Lamar using "telnet" and at the % or $ prompt enter the "quota" command. This command produces output similar to the following: 
