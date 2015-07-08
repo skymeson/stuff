@@ -1,3 +1,56 @@
-Cleaning up disk space on Holly, Simla or Lamar 
-Question: I received a message about being over my quota. What does this mean? 
-Answer: If you get this type of message or you are having trouble saving mail or files, then you may be over your disk space limit. This limit is referred to as your disk quota. You can gain some space by doing a little house cleaning on your account. Check out your account's quota by using the Quota Calculator for a quick look at your file space information. However, for a more detailed analysis of your file space and a way to reduce it, log in to Holly/Simla/Lamar using "telnet" and at the % or $ prompt enter the "quota" command. This command produces output similar to the following: 
+Cleaning up disk space 
+
+ 
+If you get this type of message or you are having trouble saving files, then you may be over your disk space limit. This limit is referred to as your disk quota. You can gain some space by doing a little house cleaning on your account. Check out your account's quota by using the Quota Calculator for a quick look at your file space information. However, for a more detailed analysis of your file space and a way to reduce it, log in to Holly/Simla/Lamar using "telnet" and at the % or $ prompt enter the "quota" command. This command produces output similar to the following: 
+
+Once you know how much space you are using, you can use a few commands to determine which directories and files have all of this space. 
+Since you are in your home directory when you log in, the command 
+
+du -sk * |sort -nr |more
+
+will tell you the amount of space used by each directory or file in your home directory. For example, it could produce the following output: 
+
+16368 mail
+1332  Hello_from_FHills
+1076  Hiya_Sweetie
+360   Trash
+264   c:creaks
+264   c:\creaks
+264   a:creaks
+24    7-23.DOC
+4     dead.letter
+
+
+This tells you that most of your space is being used in a file or directory called mail. In this case, mail is a directory so you should look in this directory for files to remove or reduce in size. The number 16368 is in blocks which means that this directory is using about 16.368 megabytes of space. Incidentally, mail is the directory that pine uses to store any mail folders you create. 
+
+You also have a number of other files that are taking space including one that is taking 1.332 megabytes and another that is taking 1.076 megabytes. The command "ls -l" will tell you which of these are files and which are directories. You can remove a file with the command: 
+rm filename
+
+You can also remove a directory and all its contents with the command: 
+
+ rm -r directoryname
+
+
+In this case, you should cd into the mail directory and run the du command again to get a break down of the files and directories within the mail directory as follows: 
+
+cd mail
+
+du -sk * |sort -nr |more
+
+This will produce a list something like: 
+
+2380  sent-mail-oct-1998
+2112  misc
+1756  t
+1184  sent-mail-nov-1998
+1048  offcampus
+968   higher
+860   computer
+820   sent-mail-aug-1998
+524   sent-mail-sep-1998
+420   creak
+404   sent-mail-dec-1998
+376   sent-mail-jan-1999
+360   mlk
+
+You can remove any of these files with the "rm" command but since these are mail folders you may want to use pine to read these folders with the "L" command and delete unwanted mail or use the "D" command in pine to delete the whole folder. Good candidates for removal are the sent-mail folders which contain all the mail you have sent out organized by months.
