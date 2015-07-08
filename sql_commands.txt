@@ -1,0 +1,38 @@
+
+
+Retrieving information
+SELECT from_columns FROM table WHERE conditions;
+
+All values
+SELECT * FROM table;
+
+Some values
+SELECT * FROM table WHERE rec_name = “value”;
+
+Multiple criteria
+SELECT * FROM table WHERE rec1=”value1” AND rec2=”value2”;
+
+Selecting specific columns
+SELECT column_name FROM table;
+
+Retrieving unique output records
+SELECT DISTINCT column_name FROM table;
+
+Sorting
+SELECT col1, col2 FROM table ORDER BY col2;
+
+Sorting backward
+SELECT col1, col2 FROM table ORDER BY col2 DESC;
+
+Counting rows
+SELECT COUNT(*) FROM table;
+
+Grouping with counting
+SELECT owner, COUNT(*) FROM table GROUP BY owner;
+
+
+Maximum value
+SELECT MAX(col_name) AS label FROM table;
+
+Selecting from multiple tables (Join same table using alias w/”AS”)
+SELECT pet.name, comment FROM pet, event WHERE pet.name = event.name;
